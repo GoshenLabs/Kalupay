@@ -17,6 +17,7 @@ import "/styles/global.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { extendTheme } from '@chakra-ui/react'
 import { BaseSepoliaTestnet } from '@thirdweb-dev/chains';
+import Announcement from '../components/Announcement';
 
 const theme = extendTheme({
   styles: {
@@ -139,6 +140,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <meta name="twitter:image" content="/metadata.png" />
           <meta name="twitter:url" content="https://kalupay.goshendao.com" />
         </Head>
+        <Announcement text="🚨 You are in test mode! All assets have no value." />
         <Component {...pageProps} />
         <SpeedInsights />
       </ChakraProvider>
