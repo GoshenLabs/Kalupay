@@ -1,0 +1,79 @@
+/* styles/dashboard.module.css */
+.dashboardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    align-content: center;
+    max-width: 400px;
+    max-height: 900px;
+    height: 750px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #000000;
+  }
+  
+  .iconButton {
+    padding: 6px;
+    margin: 8px;
+    text-align: center;
+    width: 80px;
+    border-radius: 8px;
+    border: 2px solid transparent; /* Set the border to transparent initially */
+
+    /* Create a linear gradient for the border */
+    border-image: linear-gradient(to bottom left, rgba(86, 171, 47, 0.8), rgba(168, 224, 99, 0.8)); 
+    border-image-slice: 1; /* Ensure the entire border is covered by the gradient */
+  }
+  
+  .iconButton a {
+    text-decoration: none;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  @media (max-width: 600px) {
+    .dashboardContainer {
+      display: grid; /* Use grid layout for small screens */
+      grid-template-columns: repeat(2, 1fr); /* Two columns in the grid */
+      gap: 10px; /* Add gap between columns */
+      align-items: center;
+    }
+  
+    .iconButton {
+      width: auto; /* Auto width for grid items */
+    }
+  }
+  
+  /* Additional styles for 4 columns on larger screens */
+  @media (min-width: 601px) and (max-width: 960px) {
+    .dashboardContainer {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Four columns in the grid */
+      gap: 10px; /* Add gap between columns */
+      justify-content: center;
+    }
+  
+    .iconButton {
+      width: auto;
+    }
+  }
+
+
+  .formContainer {
+    max-width: 400px;
+    height: 150px;
+    max-height:150px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #000000;
+  }
+  
