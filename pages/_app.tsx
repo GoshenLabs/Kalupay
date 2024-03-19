@@ -117,7 +117,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
           <meta
             property="og:title"
-            content="Kalupay - Affordable and Inclusive Payment Solutions.s"
+            content="Kalupay - Affordable and Inclusive Payment Solutions."
           />
           <meta
             property="og:description"
