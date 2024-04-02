@@ -691,6 +691,7 @@ export default function WithdrawNowPage() {
       borderRadius="lg"
       boxShadow="md"
       bg="black"
+      height= "100vh"
       className={styles.formContainer}
       width={["100%", "100%", "80%", "60%"]}
       mx="auto"

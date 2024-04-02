@@ -37,7 +37,7 @@ AWS.config.update({
 
 const ses = new AWS.SES({ apiVersion: "2010-12-01" });
 
-export default function DepositFormPage() {
+export default function FaucetFormPage() {
   const [modalContent, setModalContent] = useState<null | JSX.Element>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toast = useToast();
@@ -438,18 +438,9 @@ export default function DepositFormPage() {
       mx="auto"
     >
       <Heading fontSize="6xl" mb={4} textAlign="center" color={'white'}>
-        Deposit
+        Faucet
       </Heading>
-      <FormControl mb={4}>
-        <FormLabel color={'white'}>Amount:</FormLabel>
-        <Input
-          placeholder="0.0"
-          type="number"
-          value={formData.amount}
-          required
-          onChange={(event) => handleChange(event, "amount")}
-        />
-      </FormControl>
+    
 
       <FormControl mb={4}>
         <FormLabel>Select Deposit Currency:</FormLabel>

@@ -8,7 +8,6 @@ import {
   embeddedWallet,
   trustWallet,
   rainbowWallet,
-  smartWallet,
   phantomWallet
 } from "@thirdweb-dev/react";
 import { ChakraProvider, CSSReset } from "@chakra-ui/react";
@@ -16,7 +15,7 @@ import Head from "next/head";
 import "/styles/global.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { extendTheme } from '@chakra-ui/react'
-import { BaseSepoliaTestnet } from '@thirdweb-dev/chains';
+import { NeonEvmDevnet } from '@thirdweb-dev/chains';
 import Announcement from '../components/Announcement';
 
 const theme = extendTheme({
@@ -44,11 +43,6 @@ const theme = extendTheme({
 })
 
 
-const smartWalletOptions = {
-  factoryAddress: "0xD4314431F5C2f9b6b5AEFFc728C0f4be04024d38",
-  gasless: true,
-};
-
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
 // You can also import additional chains from `@thirdweb-dev/chains` and pass them directly.
@@ -59,53 +53,29 @@ const clientAPI = process.env.THIRDWEB_API_KEY as string;
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider
-      activeChain={BaseSepoliaTestnet}
+      activeChain={NeonEvmDevnet}
       clientId={clientAPI}
       supportedWallets={[
-        smartWallet(
-          metamaskWallet(),
-          smartWalletOptions,
-        ),
-        smartWallet(
-          coinbaseWallet(),
-          smartWalletOptions,
-        ),
-        smartWallet(
-          walletConnect(),
-          smartWalletOptions,
-        ),
-        smartWallet(
-          localWallet(),
-          smartWalletOptions,
-        ),
-        smartWallet(
-          embeddedWallet({
-            recommended: true,
-            auth: {
-              options: [
-                "email",
-                "google",
-                "apple",
-                "facebook",
-              ],
-            },
-          }),
-          smartWalletOptions,
-        ),
-        smartWallet(
-          trustWallet(),
-          smartWalletOptions,
-        ),
-        smartWallet(
-          rainbowWallet(),
-          smartWalletOptions,
-        ),
-        smartWallet(
-          phantomWallet(),
-          smartWalletOptions,
-        ),
+        metamaskWallet(),
+        coinbaseWallet(),
+        walletConnect(),
+        localWallet(),
+        embeddedWallet({
+          recommended: true,
+          auth: {
+            options: [
+              "email",
+              "google",
+              "apple",
+              "facebook",
+            ],
+          },
+        }),
+        trustWallet(),
+        rainbowWallet(),
+        phantomWallet(),
       ]}
-      >
+    >
       <ChakraProvider theme={theme}>
       <CSSReset />
         <Head>

@@ -64,6 +64,7 @@ import {
       borderRadius="lg"
       boxShadow="md"
       bg="black"
+      height= "100vh"
       className={styles.formContainer}
       width={["100%", "100%", "80%", "60%"]} // Adjust the width based on your design needs
       mx="auto"
@@ -83,8 +84,7 @@ import {
               </Heading>
               <Text fontSize={{ base: "md", md: "xl" }}>
                 Claim your FREE {contractMetadata?.symbol} (One time only).{" "}
-                <br></br>All transaction fees to claim your{" "}
-                {contractMetadata?.symbol} are covered.
+                <br></br>
                 <br></br>Utilize {contractMetadata?.symbol} to navigate Kalupay
               </Text>
               <Text fontWeight={"bold"}>
@@ -106,7 +106,7 @@ import {
                   onSuccess={() =>
                     toast({
                       title: "Claim Successful",
-                      description: "You have successfully claimed tKALU!",
+                      description: "You have successfully claimed tTOK!",
                       status: "success",
                       duration: 90000,
                       isClosable: true,

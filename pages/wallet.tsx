@@ -117,7 +117,7 @@ const Dashboard: React.FC = () => {
               label="Claim"
               link="/claim"
             />
-            <IconButton icon={<FaCoins />} label="Mint" link="/mint" />
+            <IconButton icon={<FaCoins />} label="Faucet" link="/faucet" />
             <IconButton
               icon={<FaArrowDown />}
               label="Deposit"
