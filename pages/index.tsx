@@ -44,7 +44,7 @@ const Home: NextPage = () => {
           <Stack spacing={4} justifyContent="center">
             <Flex justifyContent="center" alignItems="center">
               <Image
-                src="/kalupay_circlebg.png"
+                src="/kalupay.png"
                 alt="Kalupay"
                 w={100}
                 maxW={["100%", "80%", "60%", "40%"]} // Adjust as needed for different breakpoints
@@ -89,7 +89,7 @@ const Home: NextPage = () => {
                 cursor="pointer"
                 onClick={() =>
                   window.open(
-                    "https://github.com/TheCryptologyAcademy/KALU",
+                    "https://github.com/GoshenLabs/Kalupay",
                     "_blank"
                   )
                 }

@@ -37,7 +37,7 @@ AWS.config.update({
 
 const ses = new AWS.SES({ apiVersion: "2010-12-01" });
 
-export default function DepositFormPage() {
+export default function FaucetFormPage() {
   const [modalContent, setModalContent] = useState<null | JSX.Element>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toast = useToast();
@@ -88,8 +88,6 @@ export default function DepositFormPage() {
   };
 
   const getModalContent = () => {
-    const originalAmount = parseFloat(formData.amount);
-    const subtractedAmount = originalAmount - 5;
     switch (formData.depositDestination) {
       case "GCash":
         return (
@@ -111,10 +109,6 @@ export default function DepositFormPage() {
                   <i>
                     Please transfer the exact amount you specified in the form
                     to this account for the processing of your deposit.
-                    <br/>
-                    <br/>
-                    You will receive {subtractedAmount} XPHP + 20 $NEON
-
                   </i>
                 </center>
               </Text>
@@ -145,9 +139,6 @@ export default function DepositFormPage() {
                   <i>
                     Please transfer the exact amount you specified in the form
                     to this account for the processing of your deposit.
-                    <br/>
-                    <br/>
-                    You will receive {subtractedAmount} XPHP + 20 $NEON
                   </i>
                 </center>
               </Text>
@@ -186,9 +177,6 @@ export default function DepositFormPage() {
                   <i>
                     Please transfer the exact amount you specified in the form
                     to this account for the processing of your deposit.
-                    <br/>
-                    <br/>
-                    You will receive {subtractedAmount} XPHP + 20 $NEON
                   </i>
                 </center>
               </Text>
@@ -256,7 +244,7 @@ export default function DepositFormPage() {
 
       switch (formData.depositDestination) {
         case "GCash":
-          recipientEmail = "catayoc.allanbrando@gmail.com";
+          recipientEmail = "pwnjabi.gg@gmail.com";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Source:</b> ${formData.depositDestination}
@@ -266,7 +254,7 @@ export default function DepositFormPage() {
           break;
 
         case "Paynow":
-          recipientEmail = "catayoc.allanbrando@gmail.com";
+          recipientEmail = "pwnjabi.gg@gmail.com";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Source:</b> ${formData.depositDestination}
@@ -276,7 +264,7 @@ export default function DepositFormPage() {
           break;
 
         case "BankTransfer":
-          recipientEmail = "catayoc.allanbrando@gmail.com";
+          recipientEmail = "pwnjabi.gg@gmail.com";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Source:</b> ${formData.depositDestination}
@@ -287,7 +275,7 @@ export default function DepositFormPage() {
 
         default:
           // Default case for unknown destinations
-          recipientEmail = "catayoc.allanbrando@gmail.com";
+          recipientEmail = "pwnjabi.gg@gmail.com";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Destination:</b> ${formData.depositDestination}
@@ -300,7 +288,7 @@ export default function DepositFormPage() {
 
       await ses
         .sendEmail({
-          Source: "catayoc.allanbrando@gmail.com",
+          Source: "pwnjabi.gg@gmail.com",
           Destination: {
             ToAddresses: [recipientEmail],
           },
@@ -349,7 +337,7 @@ export default function DepositFormPage() {
 
       switch (formData.depositDestination) {
         case "GCash":
-          recipientEmail = "raldpepz@gmail.com";
+          recipientEmail = "equan@alum.up.edu.ph";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Source:</b> ${formData.depositDestination}
@@ -359,7 +347,7 @@ export default function DepositFormPage() {
           break;
 
         case "Paynow":
-          recipientEmail = "raldpepz@gmail.com";
+          recipientEmail = "equan@alum.up.edu.ph";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Source:</b> ${formData.depositDestination}
@@ -369,7 +357,7 @@ export default function DepositFormPage() {
           break;
 
         case "BankTransfer":
-          recipientEmail = "raldpepz@gmail.com";
+          recipientEmail = "equan@alum.up.edu.ph";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Source:</b> ${formData.depositDestination}
@@ -380,7 +368,7 @@ export default function DepositFormPage() {
 
         default:
           // Default case for unknown destinations
-          recipientEmail = "raldpepz@gmail.com";
+          recipientEmail = "equan@alum.up.edu.ph";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Destination:</b> ${formData.depositDestination}
@@ -393,7 +381,7 @@ export default function DepositFormPage() {
 
       await ses
         .sendEmail({
-          Source: "raldpepz@gmail.com",
+          Source: "pwnjabi.gg@gmail.com",
           Destination: {
             ToAddresses: [recipientEmail],
           },
@@ -444,24 +432,15 @@ export default function DepositFormPage() {
       borderRadius="lg"
       boxShadow="md"
       bg="black"
-      height= "100%"
+      height= "100vh"
       className={styles.formContainer}
       width={["100%", "100%", "80%", "60%"]}
       mx="auto"
     >
       <Heading fontSize="6xl" mb={4} textAlign="center" color={'white'}>
-        Deposit
+        Faucet
       </Heading>
-      <FormControl mb={4}>
-        <FormLabel color={'white'}>Amount:</FormLabel>
-        <Input
-          placeholder="0.0"
-          type="number"
-          value={formData.amount}
-          required
-          onChange={(event) => handleChange(event, "amount")}
-        />
-      </FormControl>
+    
 
       <FormControl mb={4}>
         <FormLabel>Select Deposit Currency:</FormLabel>
