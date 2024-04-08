@@ -7,8 +7,7 @@ import {
   localWallet,
   embeddedWallet,
   trustWallet,
-  rainbowWallet,
-  phantomWallet
+  rainbowWallet
 } from "@thirdweb-dev/react";
 import { ChakraProvider, CSSReset } from "@chakra-ui/react";
 import Head from "next/head";
@@ -73,7 +72,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         }),
         trustWallet(),
         rainbowWallet(),
-        phantomWallet(),
       ]}
     >
       <ChakraProvider theme={theme}>
@@ -110,7 +108,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <meta name="twitter:image" content="/metadata.png" />
           <meta name="twitter:url" content="https://kalupay.goshendao.com" />
         </Head>
-        <Announcement text="🚨 You are in test mode! All assets have no value." />
+        <Announcement text="🚨 You are in test mode! Assets has no value." />
         <Component {...pageProps} />
         <SpeedInsights />
       </ChakraProvider>
