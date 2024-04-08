@@ -81,7 +81,7 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
       ) : (
-          <Container maxW="full" p={[4, 6]} height="100vh"
+          <Container maxW="full" p={[4, 6]} height="100%"
           maxHeight={1080}>
           {/* Display native currency balance */}
           <Box bgGradient='linear(to-bl, rgba(86, 171, 47, 0.8), rgba(168, 224, 99, 0.8))' p={4} borderRadius="lg"
@@ -117,7 +117,7 @@ const Dashboard: React.FC = () => {
               label="Claim"
               link="/claim"
             />
-            <IconButton icon={<FaCoins />} label="Faucet" link="/faucet" />
+            <IconButton icon={<FaCoins />} label="Faucet" link="#" />
             <IconButton
               icon={<FaArrowDown />}
               label="Deposit"

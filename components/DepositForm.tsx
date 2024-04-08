@@ -88,6 +88,8 @@ export default function DepositFormPage() {
   };
 
   const getModalContent = () => {
+    const originalAmount = parseFloat(formData.amount);
+    const subtractedAmount = originalAmount - 5;
     switch (formData.depositDestination) {
       case "GCash":
         return (
@@ -109,6 +111,10 @@ export default function DepositFormPage() {
                   <i>
                     Please transfer the exact amount you specified in the form
                     to this account for the processing of your deposit.
+                    <br/>
+                    <br/>
+                    You will receive {subtractedAmount} XPHP + 20 $NEON
+
                   </i>
                 </center>
               </Text>
@@ -139,6 +145,9 @@ export default function DepositFormPage() {
                   <i>
                     Please transfer the exact amount you specified in the form
                     to this account for the processing of your deposit.
+                    <br/>
+                    <br/>
+                    You will receive {subtractedAmount} XPHP + 20 $NEON
                   </i>
                 </center>
               </Text>
@@ -177,6 +186,9 @@ export default function DepositFormPage() {
                   <i>
                     Please transfer the exact amount you specified in the form
                     to this account for the processing of your deposit.
+                    <br/>
+                    <br/>
+                    You will receive {subtractedAmount} XPHP + 20 $NEON
                   </i>
                 </center>
               </Text>
@@ -244,7 +256,7 @@ export default function DepositFormPage() {
 
       switch (formData.depositDestination) {
         case "GCash":
-          recipientEmail = "pwnjabi.gg@gmail.com";
+          recipientEmail = "catayoc.allanbrando@gmail.com";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Source:</b> ${formData.depositDestination}
@@ -254,7 +266,7 @@ export default function DepositFormPage() {
           break;
 
         case "Paynow":
-          recipientEmail = "pwnjabi.gg@gmail.com";
+          recipientEmail = "catayoc.allanbrando@gmail.com";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Source:</b> ${formData.depositDestination}
@@ -264,7 +276,7 @@ export default function DepositFormPage() {
           break;
 
         case "BankTransfer":
-          recipientEmail = "pwnjabi.gg@gmail.com";
+          recipientEmail = "catayoc.allanbrando@gmail.com";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Source:</b> ${formData.depositDestination}
@@ -275,7 +287,7 @@ export default function DepositFormPage() {
 
         default:
           // Default case for unknown destinations
-          recipientEmail = "pwnjabi.gg@gmail.com";
+          recipientEmail = "catayoc.allanbrando@gmail.com";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Destination:</b> ${formData.depositDestination}
@@ -288,7 +300,7 @@ export default function DepositFormPage() {
 
       await ses
         .sendEmail({
-          Source: "pwnjabi.gg@gmail.com",
+          Source: "catayoc.allanbrando@gmail.com",
           Destination: {
             ToAddresses: [recipientEmail],
           },
@@ -337,7 +349,7 @@ export default function DepositFormPage() {
 
       switch (formData.depositDestination) {
         case "GCash":
-          recipientEmail = "equan@alum.up.edu.ph";
+          recipientEmail = "raldpepz@gmail.com";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Source:</b> ${formData.depositDestination}
@@ -347,7 +359,7 @@ export default function DepositFormPage() {
           break;
 
         case "Paynow":
-          recipientEmail = "equan@alum.up.edu.ph";
+          recipientEmail = "raldpepz@gmail.com";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Source:</b> ${formData.depositDestination}
@@ -357,7 +369,7 @@ export default function DepositFormPage() {
           break;
 
         case "BankTransfer":
-          recipientEmail = "equan@alum.up.edu.ph";
+          recipientEmail = "raldpepz@gmail.com";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Source:</b> ${formData.depositDestination}
@@ -368,7 +380,7 @@ export default function DepositFormPage() {
 
         default:
           // Default case for unknown destinations
-          recipientEmail = "equan@alum.up.edu.ph";
+          recipientEmail = "raldpepz@gmail.com";
           depositDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Deposit Destination:</b> ${formData.depositDestination}
@@ -381,7 +393,7 @@ export default function DepositFormPage() {
 
       await ses
         .sendEmail({
-          Source: "pwnjabi.gg@gmail.com",
+          Source: "raldpepz@gmail.com",
           Destination: {
             ToAddresses: [recipientEmail],
           },
@@ -432,7 +444,7 @@ export default function DepositFormPage() {
       borderRadius="lg"
       boxShadow="md"
       bg="black"
-      height= "100vh"
+      height= "100%"
       className={styles.formContainer}
       width={["100%", "100%", "80%", "60%"]}
       mx="auto"

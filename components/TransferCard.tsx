@@ -63,6 +63,7 @@ export default function TransferCard() {
       borderRadius="lg"
       boxShadow="md"
       bg="black"
+      height= "100%"
       className={styles.formContainer}
       width={["100%", "100%", "80%", "60%"]} // Adjust the width based on your design needs
       mx="auto"

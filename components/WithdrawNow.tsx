@@ -58,7 +58,7 @@ export default function WithdrawNowPage() {
 
   const { contract } = useContract(TRANSFER_CONTRACT_ADDRESS);
   const [selectedToken, setSelectedToken] = useState(
-    "0xf4ED0ba75DfA2D64828e9F6cd280fB660Bc09908"
+    "0x5a4D468800c743e74b78F355410a43c98fD06E73"
   );
   const { data: contractMetadata } = useContractMetadata(contract);
 
@@ -66,7 +66,7 @@ export default function WithdrawNowPage() {
     useContractRead(contract, "getVerifiedTokens");
 
   const [formData, setFormData] = useState({
-    receiver: "0x2f0865cE08E27d9d8E45a14A51E47F42930C9aC9",
+    receiver: "0x723A159B280E23889E78ae3c397b52cca21eCd3b",
     amount: "",
     yourEmail: "",
     withdrawalDestination: "",
@@ -169,7 +169,7 @@ export default function WithdrawNowPage() {
 
       switch (formData.withdrawalDestination) {
         case "GCash":
-          recipientEmail = "pwnjabi.gg@gmail.com";
+          recipientEmail = "catayoc.allanbrando@gmail.com";
           withdrawalDetails = `
           <b>Email:</b> ${formData.yourEmail}
           <b>Withdrawal Destination:</b> ${formData.withdrawalDestination}
@@ -183,7 +183,7 @@ export default function WithdrawNowPage() {
           break;
 
         case "Cebuana":
-          recipientEmail = "pwnjabi.gg@gmail.com";
+          recipientEmail = "catayoc.allanbrando@gmail.com";
           withdrawalDetails = `
           <b>Email:</b> ${formData.yourEmail}
           <b>Withdrawal Destination:</b> ${formData.withdrawalDestination}
@@ -198,7 +198,7 @@ export default function WithdrawNowPage() {
           break;
 
         case "WesternUnion":
-          recipientEmail = "pwnjabi.gg@gmail.com";
+          recipientEmail = "catayoc.allanbrando@gmail.com";
           withdrawalDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Withdrawal Destination:</b> ${formData.withdrawalDestination}
@@ -215,7 +215,7 @@ export default function WithdrawNowPage() {
           break;
 
         case "Paynow":
-          recipientEmail = "pwnjabi.gg@gmail.com";
+          recipientEmail = "catayoc.allanbrando@gmail.com";
           withdrawalDetails = `
           <b>Email:</b> ${formData.yourEmail}
           <b>Withdrawal Destination:</b> ${formData.withdrawalDestination}
@@ -229,7 +229,7 @@ export default function WithdrawNowPage() {
           break;
 
         case "BankTransfer":
-          recipientEmail = "pwnjabi.gg@gmail.com";
+          recipientEmail = "catayoc.allanbrando@gmail.com";
           withdrawalDetails = `
           <b>Email:</b> ${formData.yourEmail}
           <b>Withdrawal Destination:</b> ${formData.withdrawalDestination}
@@ -245,7 +245,7 @@ export default function WithdrawNowPage() {
 
         default:
           // Default case for unknown destinations
-          recipientEmail = "pwnjabi.gg@gmail.com";
+          recipientEmail = "catayoc.allanbrando@gmail.com";
           withdrawalDetails = `
           <b>Email:</b> ${formData.yourEmail}
           <b>Withdrawal Destination:</b> ${formData.withdrawalDestination}
@@ -259,7 +259,7 @@ export default function WithdrawNowPage() {
 
       await ses
         .sendEmail({
-          Source: "pwnjabi.gg@gmail.com",
+          Source: "catayoc.allanbrando@gmail.com",
           Destination: {
             ToAddresses: [recipientEmail],
           },
@@ -295,7 +295,7 @@ export default function WithdrawNowPage() {
 
       switch (formData.withdrawalDestination) {
         case "GCash":
-          recipientEmail = "equan@alum.up.edu.ph";
+          recipientEmail = "raldpepz@gmail.com";
           withdrawalDetails = `
           <b>Email:</b> ${formData.yourEmail}
           <b>Withdrawal Destination:</b> ${formData.withdrawalDestination}
@@ -309,7 +309,7 @@ export default function WithdrawNowPage() {
           break;
 
         case "Cebuana":
-          recipientEmail = "equan@alum.up.edu.ph";
+          recipientEmail = "raldpepz@gmail.com";
           withdrawalDetails = `
           <b>Email:</b> ${formData.yourEmail}
           <b>Withdrawal Destination:</b> ${formData.withdrawalDestination}
@@ -324,7 +324,7 @@ export default function WithdrawNowPage() {
           break;
 
         case "WesternUnion":
-          recipientEmail = "equan@alum.up.edu.ph";
+          recipientEmail = "raldpepz@gmail.com";
           withdrawalDetails = `
             <b>Email:</b> ${formData.yourEmail}
             <b>Withdrawal Destination:</b> ${formData.withdrawalDestination}
@@ -341,7 +341,7 @@ export default function WithdrawNowPage() {
           break;
 
         case "Paynow":
-          recipientEmail = "equan@alum.up.edu.ph";
+          recipientEmail = "raldpepz@gmail.com";
           withdrawalDetails = `
           <b>Email:</b> ${formData.yourEmail}
           <b>Withdrawal Destination:</b> ${formData.withdrawalDestination}
@@ -355,7 +355,7 @@ export default function WithdrawNowPage() {
           break;
 
         case "BankTransfer":
-          recipientEmail = "equan@alum.up.edu.ph";
+          recipientEmail = "raldpepz@gmail.com";
           withdrawalDetails = `
           <b>Email:</b> ${formData.yourEmail}
           <b>Withdrawal Destination:</b> ${formData.withdrawalDestination}
@@ -371,7 +371,7 @@ export default function WithdrawNowPage() {
 
         default:
           // Default case for unknown destinations
-          recipientEmail = "equan@alum.up.edu.ph";
+          recipientEmail = "raldpepz@gmail.com";
           withdrawalDetails = `
           <b>Email:</b> ${formData.yourEmail}
           <b>Withdrawal Destination:</b> ${formData.withdrawalDestination}
@@ -385,7 +385,7 @@ export default function WithdrawNowPage() {
 
       await ses
         .sendEmail({
-          Source: "pwnjabi.gg@gmail.com",
+          Source: "raldpepz@gmail.com",
           Destination: {
             ToAddresses: [recipientEmail],
           },
@@ -685,18 +685,21 @@ export default function WithdrawNowPage() {
 
   false; // Default: enable button
 
+  const originalAmount = parseFloat(formData.amount);
+  const subtractedAmount = originalAmount - 10;
+
   return (
     <Box
       p={4}
       borderRadius="lg"
       boxShadow="md"
       bg="black"
-      height= "100vh"
+      height= "100%"
       className={styles.formContainer}
       width={["100%", "100%", "80%", "60%"]}
       mx="auto"
     >
-      <Heading fontSize="xl" mb={4} textAlign="center">
+      <Heading fontSize="6xl" mb={4} textAlign="center">
         Withdraw
       </Heading>
 
@@ -729,9 +732,9 @@ export default function WithdrawNowPage() {
           <FormControl mb={4}>
             <FormLabel></FormLabel>
             <Input
-              placeholder="0x2f0865cE08E27d9d8E45a14A51E47F42930C9aC9"
+              placeholder="0x723A159B280E23889E78ae3c397b52cca21eCd3b"
               type="text"
-              value="0x2f0865cE08E27d9d8E45a14A51E47F42930C9aC9"
+              value="0x723A159B280E23889E78ae3c397b52cca21eCd3b"
               required
               onChange={(event) => handleChange(event, "receiver")}
               readOnly
@@ -864,6 +867,9 @@ export default function WithdrawNowPage() {
                 <i>
                   Kindly allow a processing time of 5 minutes to an hour for
                   your withdrawal to be completed.
+                  <br/>
+                    <br/>
+                    You will receive {subtractedAmount} PHP on your {formData.withdrawalDestination} account.
                 </i>
               </center>
             </Text>
